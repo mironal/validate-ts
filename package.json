@@ -1,0 +1,69 @@
+{
+    "name": "validate-ts",
+    "version": "1.0.0",
+    "description": "The object validator for TypeScript.",
+    "main": "dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "rm -rf ./dict && tsc",
+        "test": "jest",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mironal/validate-ts.git"
+    },
+    "homepage": "https://github.com/mironal/validate-ts",
+    "bugs": {
+        "url": "https://github.com/mironal/validate-ts/issues"
+    },
+    "keywords": [
+        "scheme",
+        "object",
+        "typesafe",
+        "typescript",
+        "firebase",
+        "type",
+		"types",
+		"check",
+		"checking",
+        "validator",
+		"validate",
+		"validation",
+		"utility",
+		"util",
+		"typeof",
+		"instanceof",
+		"assert",
+		"assertion",
+		"test",
+		"kind",
+		"primitive",
+		"verify",
+		"compare"
+    ],
+    "author": "mironal",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "22.2.3",
+        "jest": "23.0.0",
+        "ts-jest": "22.4.6",
+        "typescript": "2.8.3"
+    },
+    "dependencies": {},
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ]
+    }
+}
