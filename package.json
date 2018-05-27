@@ -1,5 +1,5 @@
 {
-    "name": "validate-ts",
+    "name": "@mironal/validate-ts",
     "version": "1.0.0",
     "description": "The object validator for TypeScript.",
     "main": "dist/index.js",

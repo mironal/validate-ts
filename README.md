@@ -6,7 +6,7 @@
 
 ## Install
 
-`npm install validate-ts`
+`npm install @mironal/validate-ts`
 
 ## Usage
 
