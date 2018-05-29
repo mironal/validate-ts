@@ -1,3 +1,5 @@
+export type BehaviorOnError = "throw" | "print" | "ignore"
+
 export type TestFunc<T> = ((value: any, key: keyof T) => boolean)
 
 export type Scheme<T> = {
@@ -16,7 +18,10 @@ export class ValidateError extends Error {
   }
 }
 
-export const createValidatorFor = <T extends {}>(scheme: Scheme<T>) => {
+export const createValidatorFor = <T extends {}>(
+  scheme: Scheme<T>,
+  behavior: BehaviorOnError = "throw",
+) => {
   Object.keys(scheme).forEach(k => {
     const f = scheme[k]
     if (typeof f !== "function") {
@@ -29,7 +34,13 @@ export const createValidatorFor = <T extends {}>(scheme: Scheme<T>) => {
     )
 
     if (invalidKeys.length > 0) {
-      throw new ValidateError(invalidKeys, input)
+      const error = new ValidateError(invalidKeys, input)
+      if (behavior === "throw") {
+        throw error
+      } else if (behavior === "print") {
+        console.error(error)
+      }
+      return false
     }
 
     return true
